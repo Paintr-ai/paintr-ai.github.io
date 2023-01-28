@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Paintr - Image Generation and Upscaling</title>
+  <head>
+    <title>Paintr - The AI Image Generator</title>
     <style>
-        /* CSS styles go here */
-        body {
-            background-color: #f2f2f2;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #ccc;
-            margin-bottom: 20px;
-        }
-        
-        .card img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
+      /* Add CSS styles here */
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        color: blue;
+        margin-top: 50px;
+      }
+      p {
+        margin-top: 30px;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      .card {
+        width: 300px;
+        height: 400px;
+        margin: 20px;
+        text-align: center;
+        box-shadow: 2px 2px 5px grey;
+      }
+      .card img {
+        width: 100%;
+        height: 70%;
+        object-fit: contain;
+      }
+      .card h2 {
+        color: blue;
+        margin-top: 20px;
+      }
     </style>
-</head>
-
-<body>
-    <h1>Paintr</h1>
-    <div class="card">
-        <h2>Image Generation</h2>
-        <p>Paintr is an AI that generates images based on a prompt. Simply use the command '/paint' followed by your description of the image you want to generate. For example: '/paint a sunset over a mountain range'.</p>
+  </head>
+  <body>
+    <h1>Welcome to Paintr</h1>
+    <p>Paintr is an AI image generator that can create images based on your descriptions. Simply use the command <code>/paint</code> followed by your desired image description, and our AI will generate a unique image for you.
+    <br>
+    <br>
+    In addition to image generation, Paintr can also upscale your images. Use the command <code>/upscale</code> followed by your image to upscale it by a factor of x8, as long as the image is smaller than 200x200 pixels.
+    <br>
+    <br>
+    For larger images, use the command <code>/light-upscale</code> followed by your image to upscale it by a factor of x4, as long as the image is smaller than 650x650 pixels.
+    </p>
+    <div class="container">
+      <div class="card">
+        <img src="before-image-example.jpg" alt="Before image example">
+        <h2>Before</h2>
+      </div>
+      <div class="card">
+        <img src="after-image-example.jpg" alt="After image example">
+        <h2>After</h2>
+      </div>
     </div>
-    <div class="card">
-        <h2>Image Upscaling</h2>
-        <p>In addition to generating images, Paintr can also upscale existing images. Use the command '/upscale' to upscale an image by a factor of 8, for images that are 200x200 pixels or smaller. Use the command '/light-upscale' to upscale an image by a factor of 4, for images that are 650x650 pixels or smaller.</p>
-    </div>
-</body>
-
+  </body>
 </html>
