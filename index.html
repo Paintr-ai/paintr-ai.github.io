@@ -2,61 +2,111 @@
 <html>
 
 <head>
-  <title>Paintr</title>
-  <style>
-    /* Add some CSS to style the website */
-    body {
-      background-color: #ffa600;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 30px;
-    }
-
-    h1 {
-      color: #fff;
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: #fff;
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    .examples {
-      display: flex;
-      justify-content: center;
-    }
-
-    .example {
-      margin: 20px;
-    }
-
-    .example img {
-      width: 300px;
-      height: 300px;
-      border-radius: 20px;
-      box-shadow: 2px 2px 10px #333;
-    }
-  </style>
+  <title>Paintr AI - Generate & Upscale images</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
-<body>
-  <h1>Paintr</h1>
-  <p>Paintr is a bot that generates images based on a prompt. Use the command <code>/paint</code> followed by a
-    description of the image you want to generate to get started.</p>
-  <p>In addition to generating images, Paintr can also upscale images by a factor of 8 for images under 200x200 and by a
-    factor of 4 for images under 650x650, with the command <code>/upscale</code> and <code>/light-upscale</code>
-    respectively.</p>
-  <div class="examples">
-    <div class="example">
-      <img src="example1.jpg" alt="Example of generated image">
-      <p>Example of a generated image</p>
+<body style="width: 100%; display: block;">
+  <!-- The banner -->
+  <div class="hero-section wf-section" style="background-color: gray;">
+    <div class="container"></div>
+  </div>
+
+  <h2 style="width: 100%; text-align: center;">/paint currently not available.</h2>
+  <div class="support-section wf-section" style="padding-left: 100px; padding-right: 100px;">
+    <div class="container">
+      <div class="support-top-wrapper">
+        <div class="support-top-left">
+          <h2 class="support-top-heading">Imagine something...<br>Generate it!<br></h2>
+        </div>
+        <div class="support-top-right">
+          <p>The <strong>/paint</strong> feature allows you to generate an image based on a description you provide.
+            Simply type in the command <strong>/paint</strong> followed by a description of the image you would like to
+            create in the Discord server, and the AI will generate an image for you. It&#x27;s a fun and easy way to
+            create custom images without any design skills needed.</p>
+        </div>
+      </div>
+      <div class="support-wrapper">
+        <div class="support-column" style="max-width: 350px;">
+          <div class="support-square">
+            <div class="support-square-number">01</div><img src="assets/64x64.png" loading="lazy" width="100" alt=""
+              class="image-2">
+          </div>
+          <p>Write your description in the <span><strong>/paint</strong></span> command on our Discord bot and it will
+            start the generation of your image!</p>
+        </div>
+        <div class="support-column" style="max-width: 350px;">
+          <div class="support-square">
+            <div class="support-square-number">02</div><img src="assets/256x256.png" loading="lazy" width="100" alt=""
+              class="image-2">
+          </div>
+          <p>The image will then be upscaled to look better because a 64x64 image is not a good result. The final result
+            is a 1024x1024 image.</p>
+        </div>
+        <div class="support-column" style="max-width: 350px;">
+          <div class="support-square">
+            <div class="support-square-number">03</div><img src="assets/1024x1024.png" loading="lazy" width="100" alt=""
+              class="image-2">
+          </div>
+          <p>And boom! You have your image now! You can use it for everything you want, this image should not exist :)
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="example">
-      <img src="example2.jpg" alt="Example of upscaled image">
-      <p>Example of an upscaled image</p>
+  </div>
+
+  <!-- Separation -->
+  <div class="section wf-section" style="background-color: #2b221c; height: 15px;"><div class="container"></div></div>
+
+
+  <div class="support-section wf-section" style="padding-left: 100px; padding-right: 100px;">
+    <div class="container">
+      <div class="support-top-wrapper">
+        <div class="support-top-left">
+          <h2 class="support-top-heading">Bad image? Good upscale!<br></h2>
+        </div>
+        <div class="support-top-right">
+          <p>With the <strong>/upscale</strong> command you can upscale images up to 8 times!<br>You can see just below
+            the result of an upscale. There is only a problem, this AI don&#x27;t like upscaling humans... But it is
+            still a good AI :)</p>
+        </div>
+      </div>
+      <div class="support-wrapper">
+        <div class="support-column" style="max-width: 350px;">
+          <div class="support-square">
+            <div class="support-square-number">01</div><img src="assets/64x64.png" loading="lazy" width="100" alt=""
+              class="image-2">
+          </div>
+          <p>Use the <strong>/upscale</strong> command and upload your bad quality file and then run the command. The
+            bot should answer and start the upscale process.</p>
+        </div>
+        <div class="support-column" style="max-width: 350px;">
+          <div class="support-square">
+            <div class="support-square-number">02</div><img src="assets/256x256.png" loading="lazy" width="330"
+              height="330" alt="">
+          </div>
+          <p>A couple seconds later, your image will then be upscaled to 4x. The last part is also a 4x upscale.</p>
+        </div>
+        <div class="support-column" style="max-width: 350px;">
+          <div class="support-square">
+            <div class="support-square-number">03</div><img src="assets/1024x1024.png" loading="lazy" width="330"
+              height="330" sizes="330px" alt="">
+          </div>
+          <p>Then the bot will tell you that the process is finished. It will send you the start and the end image
+            so you can see the difference.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="safe-section wf-section">
+    <div class="container">
+      <div class="safe-wrapper" style="padding-right: 40px;">
+        <h2 class="safe-heading">Here is our project, <br>feel free to join :)</h2>
+        <p class="safe-paragraph">
+          <button onmouseenter="this.style.backgroundColor = 'rgb(66, 72, 184)';" onmouseleave="this.style.backgroundColor = 'rgb(26, 30, 105)';" style="width: 300px; height: 70px; border-radius: 25px; background-color: rgb(26, 30, 105); border-color: transparent; font-size: 26px; cursor: pointer; color: white; text-align: center; align-items: center;" onclick="document.location.href = 'https://discord.com/invite/3TyWqv5U6G'"><img src="./assets/discord.png" height="30px" style="padding-right: 10px;">Join our Discord</button>
+
+        </p>
+      </div>
     </div>
   </div>
 </body>

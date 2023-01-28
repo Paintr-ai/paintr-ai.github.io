@@ -1,0 +1,213 @@
+body {
+    font-family: Sen, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: bold;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 1;
+    color: #000;
+}
+
+.style-heading {
+    margin-top: 0px;
+}
+
+.hero-section {
+    height: 500px;
+    background-image: url('./assets/banner.png'), -webkit-gradient(linear, left bottom, left top, from(#222), to(rgba(34, 34, 34, 0)));
+    background-image: url('./assets/banner.png'), linear-gradient(360deg, #222, rgba(34, 34, 34, 0));
+    background-position: 0px 0px, 0px 0px;
+    background-size: 100%, auto;
+}
+
+.support-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.support-top-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 40px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.support-top-left {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.support-top-details-text {
+    text-transform: uppercase;
+}
+
+.support-top-heading {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.support-top-right {
+    width: 45%;
+}
+
+.support-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.support-column {
+    width: 30%;
+    min-height: 200px;
+}
+
+.support-square {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    width: 350px;
+    height: 350px;
+    min-height: 350px;
+    margin-bottom: 45px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #222;
+}
+
+.support-square-number {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    right: auto;
+    bottom: auto;
+    color: #f9f9f9;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.support-square-image {
+    position: absolute;
+    left: auto;
+    top: auto;
+    right: -25%;
+    bottom: -25%;
+}
+
+.support-square-image.triangle {
+    right: -11%;
+    bottom: -17%;
+}
+
+.support-square-image.rectangle {
+    right: -14%;
+    bottom: -31%;
+}
+
+.safe-section {
+    min-height: 550px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(34, 34, 34, 0.17)), to(#222)), url('./assets/banner.png');
+    background-image: linear-gradient(180deg, rgba(34, 34, 34, 0.17), #222), url('./assets/banner.png');
+    background-position: 0px 0px, 0% 50%;
+    background-size: auto, cover;
+}
+
+.safe-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 550px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.safe-heading {
+    width: 45%;
+    margin-right: 28px;
+    color: #f9f9f9;
+    font-size: 45px;
+    line-height: 1.2;
+    text-align: right;
+}
+
+.safe-paragraph {
+    width: 35%;
+    margin-right: 26px;
+    margin-bottom: 25px;
+    color: #f9f9f9;
+    font-size: 18px;
+    text-align: right;
+}
+
+.image {
+    display: block;
+}
+
+.image-2 {
+    width: 330px;
+    height: 330px;
+    -o-object-fit: fill;
+    object-fit: fill;
+}
