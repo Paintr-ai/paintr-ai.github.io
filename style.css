@@ -1,7 +1,7 @@
 body {
     font-family: Sen, sans-serif;
     color: #333;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
     margin: 0;
     padding: 0;
@@ -28,14 +28,6 @@ h2 {
 
 .style-heading {
     margin-top: 0px;
-}
-
-.hero-section {
-    height: 500px;
-    background-image: url('./assets/banner.png'), -webkit-gradient(linear, left bottom, left top, from(#222), to(rgba(34, 34, 34, 0)));
-    background-image: url('./assets/banner.png'), linear-gradient(360deg, #222, rgba(34, 34, 34, 0));
-    background-position: 0px 0px, 0px 0px;
-    background-size: 100%, auto;
 }
 
 .support-section {
@@ -99,7 +91,6 @@ h2 {
 
 .support-column {
     width: 30%;
-    min-height: 200px;
 }
 
 .support-square {
@@ -109,9 +100,7 @@ h2 {
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
-    width: 350px;
-    height: 350px;
-    min-height: 350px;
+    width: 100%;
     margin-bottom: 45px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -197,7 +186,7 @@ h2 {
     margin-right: 26px;
     margin-bottom: 25px;
     color: #f9f9f9;
-    font-size: 18px;
+    font-size: 20px;
     text-align: right;
 }
 
@@ -206,8 +195,50 @@ h2 {
 }
 
 .image-2 {
-    width: 330px;
-    height: 330px;
+    width: 95%;
+    height: 95%;
     -o-object-fit: fill;
     object-fit: fill;
+}
+
+
+@media (max-width: 900px) {
+    .upport-top-heading {
+        width: 100%;
+    }
+
+    .support-top-right {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .support-top-wrapper {
+        display: block;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        font-size: 25px;
+    }
+    .support-wrapper {
+        display: block;
+        align-items: center;
+        align-content: center;
+    }
+
+    .support-column {
+        width: 100%;
+    }
+
+    .support-column p {
+        font-size: 25px;
+        margin-bottom: 20%;
+    }
+
+    .support-square {
+        width: 100%;
+    }
+
+    .image {
+        display: contents;
+    }
 }
