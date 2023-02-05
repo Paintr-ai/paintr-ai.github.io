@@ -219,6 +219,7 @@ h2 {
         text-align: center;
         font-size: 25px;
     }
+
     .support-wrapper {
         display: block;
         align-items: center;
@@ -241,4 +242,29 @@ h2 {
     .image {
         display: contents;
     }
+}
+
+.collapsible {
+    margin-top: 15px;
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #bdbdbd;
 }
