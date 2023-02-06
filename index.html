@@ -8,7 +8,9 @@
 </head>
 
 <body style="width: 100%; display: block;">
-  <noscript><h1>JavaScript is required to run this website !</h1></noscript>
+  <noscript>
+    <h1>JavaScript is required to run this website !</h1>
+  </noscript>
   <!-- The banner -->
   <img src='assets/banner.png' width="100%">
 
@@ -22,7 +24,7 @@
         <div class="support-top-right">
           <p>The <strong>/paint</strong> feature allows you to generate an image based on a description you provide.
             Simply type in the command <strong>/paint</strong> followed by a description of the image you would like to
-            create in the Discord server, and the AI will generate an image for you. It&#x27;s a fun and easy way to
+            create in the Discord server, and the AI will generate an image for you. It's a fun and easy way to
             create custom images without any design skills needed.</p>
         </div>
       </div>
@@ -172,7 +174,58 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const LETTERS = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+    let coll = document.getElementsByClassName("collapsible");
+
+    for (let i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        let content = this.nextElementSibling;
+        console.log(content.scrollHeight)
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = "50%";
+        }
+      });
+    }
+
+    function isScrolledIntoView(el) {
+      let rect = el.getBoundingClientRect(),
+        elemTop = rect.top,
+        elemBottom = rect.bottom;
+
+      return (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    }
+
+
+    function textEffect() {
+      document.querySelectorAll('.text-effect').forEach(e => {
+        if (!isScrolledIntoView(e)) return;
+        e.classList.remove('text-effect');
+        let text = e.getAttribute('data-text');
+
+        let index = 0;
+        let interval = setInterval(() => {
+          let nexLetters = text.slice(0, index);
+
+          nexLetters += '0'.repeat(text.length - index + 1).split('').map(v => LETTERS[Math.round(Math.random() * (LETTERS.length - 1))]).join('')
+
+          e.innerHTML = nexLetters;
+          index += 1 / 2;
+
+          if (nexLetters == text) clearInterval(interval);
+        }, 30)
+      })
+    }
+
+    window.onscroll = (event) => { textEffect() };
+    window.onresize = (event) => { textEffect() };
+    window.onload = (event) => { textEffect() };
+  </script>
 </body>
 
 </html>
