@@ -7,11 +7,15 @@ Paintr is an AI that generates images based on a given prompt. It is written in 
 
 </div>
 
+
 ## How to use
 
 You can access Paintr on a Discord server: **SOON AVAILABLE**.
+
 Once you are on the server, use the command `/paint` followed by a description of the image you would like to generate. The AI will then create an image based on your prompt.
+
 You can also upscale an existing image with the `/upscale` command. (for big images, use `/light-upscale`).
+
 
 ## Features
 
@@ -19,9 +23,13 @@ You can also upscale an existing image with the `/upscale` command. (for big ima
 - Upscale images
 - Available on a Discord server for easy access
 
+
 ## Final Note
 
-We hope you enjoy using Paintr and are excited to see the images it generates for you. If you have any issues or feedback, please feel free to reach out to us on our Discord server.
+We hope you enjoy using Paintr and are excited to see the images it generates for you.
+
+If you have any issues or feedback, please feel free to reach out to us on our Discord server.
+
 
 ## Release & Updates
 
