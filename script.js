@@ -48,3 +48,7 @@ function textEffect() {
 window.onscroll = (event) => { textEffect() };
 window.onresize = (event) => { textEffect() };
 window.onload = (event) => { textEffect() };
+
+document.onscroll = (event) => { textEffect() };
+document.onresize = (event) => { textEffect() };
+document.onload = (event) => { textEffect() };
