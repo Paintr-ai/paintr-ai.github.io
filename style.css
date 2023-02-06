@@ -245,7 +245,6 @@ h2 {
 }
 
 .collapsible {
-    margin-top: 15px;
     background-color: #777;
     color: white;
     cursor: pointer;
@@ -262,9 +261,21 @@ h2 {
     background-color: #555;
 }
 
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
 .content {
     padding: 0 18px;
-    display: none;
+    max-height: 0px;
     overflow: hidden;
-    background-color: #bdbdbd;
+    background-color: #f1f1f1;
 }
