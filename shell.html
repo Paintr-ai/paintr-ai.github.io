@@ -16,13 +16,13 @@
   <meta data-n-head="ssr" data-hid="twitter:image:src" name="twitter:image:src" content="assets/paintr.png">
   <meta data-n-head="ssr" itemprop="image" content="assets/paintr.png">
   <meta data-n-head="ssr" data-hid="description" name="description"
-    content="Paintr is a Discord bot that transforms your text prompt into an AI generated image!">
-  <meta data-n-head="ssr" data-hid="og:title" property="og:title" content="Paintr AI - Image generator">
+    content="This is a little Terminal inside a website... Try it :)">
+  <meta data-n-head="ssr" data-hid="og:title" property="og:title" content="Paintr AI - Interactive Terminal">
   <meta data-n-head="ssr" data-hid="og:description" name="og:description"
-    content="Paintr is a Discord bot that transforms your text prompt into an AI generated image!">
-  <meta data-n-head="ssr" data-hid="twitter:title" name="twitter:title" content="Paintr AI - Image generator">
+    content="This is a little Terminal inside a website... Try it :)">
+  <meta data-n-head="ssr" data-hid="twitter:title" name="twitter:title" content="Paintr AI - Interactive Terminal">
   <meta data-n-head="ssr" data-hid="twitter:description" name="twitter:description"
-    content="Paintr is a Discord bot that transforms your text prompt into an AI generated image!">
+    content="This is a little Terminal inside a website... Try it :)">
 </head>
 
 <body>
@@ -31,10 +31,11 @@
   </noscript>
   <div id="cmds">
     <h1>> whatisthat</h1>
-    <p data-text="Welcome... On the interactive terminal of @Kubik!" class="text-effect"></p>
-    <p data-text="Type a command to run it or type <u>help</u> to get help :)" class="text-effect"></p>
+    <p data-text="Welcome... On the interactive terminal of @Kubik!<br>Type a command to run it or type <u>help</u> to get help :)"
+      class="write-effect"></p>
     <h1 id="typing">> </h1>
   </div>
+
 
   <script>
     const LOADINGDATE = new Date();
@@ -50,6 +51,8 @@
       'uptime': 'Show since how long you are on the terminal',
       'bruh': 'Bruh ?',
       'kill': 'Kill the current process',
+      'discord': 'Gives you the Discord link',
+      'paintr': 'Redirects you to the main page',
     };
 
     function isScrolledIntoView(el) {
@@ -101,6 +104,7 @@
     window.onscroll = (event) => { textEffect() };
     window.onresize = (event) => { textEffect() };
     window.onload = (event) => { textEffect() };
+    window.onload = (event) => { writeEffect() };
 
     window.addEventListener('keypress', key => {
 
@@ -198,6 +202,14 @@
         window.location.reload();
       }
 
+      else if (cmd == 'discord') {
+        window.location.href = 'https://discord.gg/3TyWqv5U6G';
+      }
+
+      else if (cmd == 'paintr') {
+        window.location.href = '/';
+      }
+
       else {
         result = 'Command not found... Type <u>help</u> to get all the commands'
       }
@@ -214,7 +226,6 @@
       CMDS.appendChild(h1);
       writeEffect(speed);
     }
-    new Date().getDate
   </script>
 </body>
 
