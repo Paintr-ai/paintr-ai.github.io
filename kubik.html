@@ -29,9 +29,12 @@
   <noscript>
     <h1>JavaScript is required to run this website !</h1>
   </noscript>
-  <h1 data-text="> show()" class="text-effect"></h1>
-  <p data-text="Welcome... On the interactive terminal of @Kubik!" class="text-effect"></p>
-  <p data-text="Type a command in the text input to run it or type <u>help</u> to get help :)" class="text-effect"></p>
+  <div class="cmds">
+    <h1>> whatisthat</h1>
+    <p data-text="Welcome... On the interactive terminal of @Kubik!" class="text-effect"></p>
+    <p data-text="Type a command to run it or type <u>help</u> to get help :)" class="text-effect"></p>
+    <h1 id="typing">> </h1>
+  </div>
 
   <script>
     const LETTERS = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -68,6 +71,18 @@
     window.onscroll = (event) => { textEffect() };
     window.onresize = (event) => { textEffect() };
     window.onload = (event) => { textEffect() };
+
+    window.addEventListener('keypress', key => {
+      
+      if (key.key == 'Backspace' && document.getElementById('typing').innerHTML.length > 5) {
+        document.getElementById('typing').innerHTML = document.getElementById('typing').innerHTML.slice(0, document.getElementById('typing').innerHTML.length - 1)
+      } else if (key.key == 'Enter') {
+
+      } else if (key.key.length == 1) {
+        console.log(document.getElementById('typing').innerHTML.length)
+        document.getElementById('typing').innerHTML += key.key;
+      }
+    })
   </script>
 </body>
 
