@@ -1,0 +1,10 @@
+body {
+  background-color: black;
+  color: lime;
+  word-wrap: break-word
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Paintr AI - Generate & Upscale images</title>
+  <link rel="stylesheet" href="shell.css" />
+  <link rel="icon" type="image/x-icon" href="assets/paintr.ico">
+
+  <meta data-n-head="ssr" data-hid="theme-color" name="theme-color" content="#df6b28">
+  <meta data-n-head="ssr" data-hid="og:type" name="og:type" property="og:type" content="website">
+  <meta data-n-head="ssr" data-hid="og:image:width" name="og:image:width" property="og:image:width" content="512">
+  <meta data-n-head="ssr" data-hid="og:image:height" name="og:image:height" property="og:image:height" content="512">
+  <meta data-n-head="ssr" data-hid="og:image:type" name="og:image:type" property="og:image:type" content="image/png">
+  <meta data-n-head="ssr" data-hid="og:image" property="og:image" content="assets/paintr.png">
+  <meta data-n-head="ssr" data-hid="og:image:secure_url" property="og:image:secure_url" content="assets/paintr.png">
+  <meta data-n-head="ssr" data-hid="twitter:image:src" name="twitter:image:src" content="assets/paintr.png">
+  <meta data-n-head="ssr" itemprop="image" content="assets/paintr.png">
+  <meta data-n-head="ssr" data-hid="description" name="description"
+    content="Paintr is a Discord bot that transforms your text prompt into an AI generated image!">
+  <meta data-n-head="ssr" data-hid="og:title" property="og:title" content="Paintr AI - Image generator">
+  <meta data-n-head="ssr" data-hid="og:description" name="og:description"
+    content="Paintr is a Discord bot that transforms your text prompt into an AI generated image!">
+  <meta data-n-head="ssr" data-hid="twitter:title" name="twitter:title" content="Paintr AI - Image generator">
+  <meta data-n-head="ssr" data-hid="twitter:description" name="twitter:description"
+    content="Paintr is a Discord bot that transforms your text prompt into an AI generated image!">
+</head>
+
+<body>
+  <noscript>
+    <h1>JavaScript is required to run this website !</h1>
+  </noscript>
+  <div id="cmds">
+    <h1>> whatisthat</h1>
+    <p data-text="Welcome... On the interactive terminal of @Kubik!" class="text-effect"></p>
+    <p data-text="Type a command to run it or type <u>help</u> to get help :)" class="text-effect"></p>
+    <h1 id="typing">> </h1>
+  </div>
+
+  <script>
+    const LOADINGDATE = new Date();
+    const LETTERS = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    const CMDS = document.getElementById('cmds');
+    const CMDLIST = {
+      'whatisthat': 'Get a quick description about this :)',
+      'whoami': 'Display effective user id',
+      'echo {text}': 'Repeat your text',
+      'clear': 'Clear the terminal output',
+      'date': 'Display the current date',
+      'cal': 'Display a calendar with the days',
+      'uptime': 'Show since how long you are on the terminal',
+      'bruh': 'Bruh ?',
+      'kill': 'Kill the current process',
+    };
+
+    function isScrolledIntoView(el) {
+      let rect = el.getBoundingClientRect(),
+        elemTop = rect.top,
+        elemBottom = rect.bottom;
+
+      return (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    }
+
+
+    function textEffect(adding = 1) {
+      document.querySelectorAll('.text-effect').forEach(e => {
+        if (!isScrolledIntoView(e)) return;
+        e.classList.remove('text-effect');
+        let text = e.getAttribute('data-text');
+
+        let index = 0;
+        let interval = setInterval(() => {
+          if (index + 1 > text.length) index = text.length + 1;
+          let nexLetters = text.slice(0, index);
+
+          nexLetters += '0'.repeat(text.length - index + 1).split('').map(v => LETTERS[Math.round(Math.random() * (LETTERS.length - 1))]).join('')
+
+          e.innerHTML = nexLetters;
+          index += adding;
+
+          if (nexLetters == text) clearInterval(interval);
+        }, 30)
+      })
+    }
+
+    function writeEffect(waiting = 30) {
+      document.querySelectorAll('.write-effect').forEach(e => {
+        if (!isScrolledIntoView(e)) return;
+        e.classList.remove('write-effect');
+        let text = e.getAttribute('data-text');
+
+        let index = 0;
+        let interval = setInterval(() => {
+          e.innerHTML = text.slice(0, index);
+
+          if (index == text.length) clearInterval(interval);
+          index++;
+        }, waiting)
+      })
+    }
+
+    window.onscroll = (event) => { textEffect() };
+    window.onresize = (event) => { textEffect() };
+    window.onload = (event) => { textEffect() };
+
+    window.addEventListener('keypress', key => {
+
+      if (key.key == 'Backspace' && document.getElementById('typing').innerHTML.length > 5) {
+        document.getElementById('typing').innerHTML = document.getElementById('typing').innerHTML.slice(0, document.getElementById('typing').innerHTML.length - 1)
+      } else if (key.key == 'Enter') {
+        execute(document.getElementById('typing').innerHTML.replace('> ', '').replace('&gt; ', ''));
+        document.getElementById('typing').id = '';
+      } else if (key.key.length == 1) {
+        document.getElementById('typing').innerHTML += key.key;
+      }
+    });
+
+    function execute(cmd) {
+      cmd = cmd.toLowerCase();
+      let result;
+      let speed = 10;
+
+      if (cmd == 'help') {
+        speed = 2;
+        result = Object.keys(CMDLIST).map(c => `<u>${c}</u> - ${CMDLIST[c]}`).join('<br>');
+      }
+
+      else if (cmd == 'whatisthat') {
+        result = 'Welcome... On the interactive terminal of @Kubik!<br>Type a command to run it or type <u>help</u> to get help :)';
+      }
+
+      else if (cmd == 'whoami') {
+        result = 'Kubik#0243';
+      }
+
+      else if (cmd.startsWith('echo ') && cmd.replace('echo ', '').trim() != '') {
+        result = cmd.replace('echo ', '');
+      }
+
+      else if (cmd == 'clear') {
+        CMDS.innerHTML = '<h1 id="typing">> </h1>';
+
+        return;
+      }
+
+      else if (cmd == 'date') {
+        let d = new Date();
+        result = `${['Sunday', 'Monday', 'Tuesday', 'Wedesday', 'Thursday', 'Friday', 'Saturday'][d.getDay()]}  ${d.getDate()} ${['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'][d.getMonth()]} ${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()} UTC${d.getTimezoneOffset() / 60 >= 0 ? '+' : ''}${d.getTimezoneOffset() / 60}`;
+      }
+
+      else if (cmd == 'cal') {
+        speed = 2;
+        let now = new Date();
+        let currentMonth = now.getMonth();
+        let currentYear = now.getFullYear();
+        let currentDay = now.getDate();
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        let monthAndYear = months[currentMonth] + " " + currentYear;
+        let daysInMonth = 32 - new Date(currentYear, currentMonth, 32).getDate();
+
+        let html = "<table><tr><th colspan='7'>" + monthAndYear + "</th></tr><tr><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thu</td><td>Fri</td><td>Sat</td></tr><tr>";
+
+        let firstDay = new Date(currentYear, currentMonth, 1).getDay();
+
+        for (let i = 0; i < firstDay; i++) html += "<td></td>";
+
+        for (let i = 1; i <= daysInMonth; i++) {
+          if (i == currentDay) html += "<td>[" + i + "]</td>";
+          else html += "<td>" + i + "</td>";
+          if ((firstDay + i) % 7 == 0) html += "</tr><tr>";
+        }
+
+        html += "</tr></table>";
+        result = html;
+      }
+
+      else if (cmd == 'uptime') {
+        let uptime = new Date() - LOADINGDATE;
+        let uptimeInSeconds = uptime / 1000;
+        let uptimeInMinutes = uptimeInSeconds / 60;
+        let uptimeInHours = uptimeInMinutes / 60;
+        let uptimeInDays = uptimeInHours / 24;
+
+        let uptimeString = "Uptime: ";
+        if (uptimeInDays >= 1) uptimeString += Math.floor(uptimeInDays) + " days, ";
+        if (uptimeInHours >= 1) uptimeString += Math.floor(uptimeInHours % 24) + " hours, ";
+        if (uptimeInMinutes >= 1) uptimeString += Math.floor(uptimeInMinutes % 60) + " minutes, ";
+        uptimeString += Math.floor(uptimeInSeconds % 60) + " seconds";
+
+        result = uptimeString;
+      }
+
+      else if (cmd == 'bruh') {
+        result = 'You got  PRINCIPAL ROLLED!!<br>HAHAA';
+      }
+
+      else if (cmd == 'kill') {
+        window.location.reload();
+      }
+
+      else {
+        result = 'Command not found... Type <u>help</u> to get all the commands'
+      }
+
+      let p = document.createElement('p');
+      p.classList.add('write-effect');
+      p.setAttribute('data-text', result);
+
+      let h1 = document.createElement('h1');
+      h1.id = 'typing';
+      h1.innerHTML = '> ';
+
+      CMDS.appendChild(p);
+      CMDS.appendChild(h1);
+      writeEffect(speed);
+    }
+    new Date().getDate
+  </script>
+</body>
+
+</html>
