@@ -58,7 +58,7 @@
           nexLetters += '0'.repeat(text.length - index + 1).split('').map(v => LETTERS[Math.round(Math.random() * (LETTERS.length - 1))]).join('')
 
           e.innerHTML = nexLetters;
-          index += 1 / 2;
+          index += 1;
 
           if (nexLetters == text) clearInterval(interval);
         }, 30)
