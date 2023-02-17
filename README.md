@@ -42,7 +42,7 @@ The first version of Paintr was released on January 2023.
 - Not hosted yet...
 ```
 **BETA 1.2 - February 17 2023**
-```
+```diff
 + Added the [/settings] command
 + Added the fast mode (change it in the settings)
 + Added the auto DM result (also in the settings)
