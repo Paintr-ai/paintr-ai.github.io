@@ -35,7 +35,6 @@
       class="write-effect"></p>
     <h1 id="typing">> </h1>
   </div>
-<input />
 
   <script>
     const LOADINGDATE = new Date();
@@ -141,7 +140,10 @@
       }
 
       else if (cmd == 'clear') {
-        CMDS.innerHTML = '<div id="cmds"><h1 id="typing">> </h1></div>';
+        CMDS.innerHTML = '';
+        let h1 = document.createElement('h1');
+        h1.id = 'typing';
+        h1.innerHTML = '> '
 
         return;
       }
