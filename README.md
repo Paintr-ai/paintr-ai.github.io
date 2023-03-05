@@ -35,6 +35,13 @@ If you have any issues or feedback, please feel free to reach out to us on our D
 
 The first version of Paintr was released on January 2023.
 
+**BETA 1.3 - March 5 2023**
+```diff
++ Added the [/info] command
++ Added a limit of 5 images every hour
++ Added the auto DM result to upscales
+- Not hosted yet...
+```
 **BETA 1.2 - February 17 2023**
 ```diff
 + Added the [/settings] command
