@@ -35,16 +35,16 @@ If you have any issues or feedback, please feel free to reach out to us on our D
 
 The first version of Paintr was released on January 2023.
 
-**BETA 1.0 - February 6 2023**
-```diff
-+ Added queue for generating images.
-+ Added the [#✨〙post-your-best] and the [#📌〙pinned] channels.
-- Not hosted yet...
-```
 **BETA 1.2 - February 17 2023**
 ```diff
 + Added the [/settings] command
 + Added the fast mode (change it in the settings)
 + Added the auto DM result (also in the settings)
+- Not hosted yet...
+```
+**BETA 1.0 - February 6 2023**
+```diff
++ Added queue for generating images.
++ Added the [#✨〙post-your-best] and the [#📌〙pinned] channels.
 - Not hosted yet...
 ```
